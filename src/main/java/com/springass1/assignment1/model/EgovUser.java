@@ -1,28 +1,41 @@
 package com.springass1.assignment1.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-@Entity
+import java.util.UUID;
+
 public class EgovUser {
-    @Id
-    private int id;
+    private String id;
     private String name;
     private String gender;
     private String mobilenumber;
-    private String address;
+    private Address address;
+    private Boolean active;
+    private Long createdtime;
 
     public EgovUser() {
     }
 
-    public EgovUser(int id, String name, String gender, String mobilenumber, String address) {
+
+
+    public EgovUser(String id, String name, String gender, String mobilenumber, Address address,Boolean active, Long createdtime) {
         this.id = id;
         this.name = name;
         this.gender = gender;
         this.mobilenumber = mobilenumber;
         this.address = address;
+        this.active=active;
+        this.createdtime=createdtime;
     }
 
-    public int getId() {
+
+    public Long  getCreatedtime() {
+        return createdtime;
+    }
+
+    public void setCreatedtime(Long  createdtime) {
+        this.createdtime = createdtime;
+    }
+
+    public String getId() {
         return id;
     }
 
@@ -38,11 +51,19 @@ public class EgovUser {
         return mobilenumber;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setId(int id) {
+    public Boolean isActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -58,7 +79,7 @@ public class EgovUser {
         this.mobilenumber = mobilenumber;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
@@ -69,8 +90,11 @@ public class EgovUser {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", gender='" + gender + '\'' +
-                ", mobilenumber=" + mobilenumber +
+                ", mobilenumber='" + mobilenumber + '\'' +
                 ", address='" + address + '\'' +
+                ", active=" + active +
+                ", createdtime=" + createdtime +
                 '}';
     }
+
 }

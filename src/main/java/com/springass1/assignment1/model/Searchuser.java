@@ -1,8 +1,12 @@
 package com.springass1.assignment1.model;
 
+import java.util.UUID;
+
 public class Searchuser {
-    private int id;
+    private String id;
     private String mobilenumber;
+    private boolean active;
+
 
     @Override
     public String toString() {
@@ -12,7 +16,15 @@ public class Searchuser {
                 '}';
     }
 
-    public void setId(int id) {
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -20,7 +32,7 @@ public class Searchuser {
         this.mobilenumber = mobilenumber;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
