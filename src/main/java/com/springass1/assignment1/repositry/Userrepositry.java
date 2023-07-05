@@ -124,6 +124,9 @@ public class Userrepositry {
             }
             jdbctemplate.update("update EGOV_USER" + " set name= ?, gender=?,mobilenumber=?,address=?,createdtime=?" + "where id = ?",
                     new Object[]{x.getName(), x.getGender(), x.getMobilenumber(), addressJson,x.getCreatedtime(), x.getId()});
+            jdbctemplate.update("update EGOV_USER" + " set name= ?, gender=?,mobilenumber=?,address=?,createdtime=?" + "where id = ?",
+                    new Object[]{x.getName(), x.getGender(), x.getMobilenumber(), x.getAddress(),x.getCreatedtime(), x.getId()});
+
             ans++;
         }
         return ans;
