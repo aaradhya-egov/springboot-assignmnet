@@ -1,4 +1,4 @@
-package com.springass1.assignment1.Mapper;
+package com.springass1.assignment1.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
